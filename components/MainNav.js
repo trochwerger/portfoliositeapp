@@ -21,12 +21,12 @@ export default function MainNav() {
               className="justify-content-center"
             >
               <Nav className="mx-auto">
-                <Link href="/projects" passHref legacyBehavior>
+                {/* <Link href="/projects" passHref legacyBehavior>
                   <Nav.Link className="m-2">Projects</Nav.Link>
                 </Link>
                 <Link href="/contact" passHref legacyBehavior>
                   <Nav.Link className="m-2">Contact</Nav.Link>
-                </Link>
+                </Link> */}
               </Nav>
             </Navbar.Collapse>
           </Container>
