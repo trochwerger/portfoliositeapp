@@ -31,3 +31,39 @@ body {
     text-wrap: balance;
   }
 }
+
+.animate-fadeIn {
+  animation: fadeIn 3s forwards;
+}
+
+.animate-fadeOut {
+  animation: fadeOut 3s forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 3s forwards;
+}
+
+.animate-fadeOutRight {
+  animation: fadeOutRight 3s forwards;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(100%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
