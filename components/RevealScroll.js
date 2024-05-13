@@ -5,6 +5,12 @@ export default function RevealScroll(props) {
   const domRef = useRef();
 
   useEffect(() => {
+    const viewportWidth = window.innerWidth;
+    const fadeInThreshold = 0.5;
+    const fadeOutThreshold = 0.9;
+    // const fadeInThreshold = viewportWidth < 600 ? 0.8 : 0.5;
+    // const fadeOutThreshold = viewportWidth < 600 ? 1 : 0.8;
+
     const fadeInObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -15,8 +21,8 @@ export default function RevealScroll(props) {
         });
       },
       {
-        rootMargin: "0px",
-        threshold: 0.5,
+        rootMargin: "-50px",
+        threshold: fadeInThreshold,
       }
     );
 
@@ -30,8 +36,8 @@ export default function RevealScroll(props) {
         });
       },
       {
-        rootMargin: "0px",
-        threshold: 0.8,
+        rootMargin: "-50px",
+        threshold: fadeOutThreshold,
       }
     );
 

@@ -3,39 +3,18 @@ import { Image, Row, Col } from "react-bootstrap";
 import { useState, useEffect, useRef } from "react";
 import RevealOnScroll from "@/components/RevealScroll";
 import RevealRightScroll from "@/components/RevealRightScroll";
-// const RevealOnScroll = (props) => {
-//   const { children } = props;
-//   const domRef = useRef();
-
-//   useEffect(() => {
-//     const observer = new IntersectionObserver((entries) => {
-//       entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//           entry.target.classList.add("animate-fadeIn");
-//           entry.target.classList.remove("animate-fadeOut");
-//         } else {
-//           entry.target.classList.remove("animate-fadeIn");
-//           entry.target.classList.add("animate-fadeOut");
-//         }
-//       });
-//     });
-
-//     observer.observe(domRef.current);
-//     return () => observer.unobserve(domRef.current);
-//   }, []);
-
-//   return <div ref={domRef}>{children}</div>;
-// };
-
+import Skills from "@/components/Skills";
+import Link from "next/link";
 export default function Home() {
   return (
     <>
       <div
         id="introSection"
-        className="h-screen m-auto flex justify-center flex-col"
+        className="h-dvh m-auto flex justify-center flex-col"
       >
-        <RevealOnScroll>
-          <div className="h-4/6 p-5">
+        {/* <RevealOnScroll> */}
+        <div className="border rounded">
+          <div className="h-4/6 p-5 ">
             <div>
               <h3>Welcome To My Site!</h3>
             </div>
@@ -55,60 +34,115 @@ export default function Home() {
                 </p>
               </div>
               <div className="md:col-end-7 md:col-span-2 col-span-auto size-5/6 md:size-fit justify-center mx-auto md:mt-0 mt-10 content-center">
-                <RevealOnScroll>
-                  <Image
-                    src="/profilePicture.jpeg"
-                    rounded
-                    fluid
-                    alt="AI Generated Profile Picture"
-                  />
-                </RevealOnScroll>
+                <Image
+                  src="/profilePicture.jpeg"
+                  rounded
+                  fluid
+                  alt="AI Generated Profile Picture"
+                />
               </div>
             </div>
           </div>
-        </RevealOnScroll>
+        </div>
+        {/* </RevealOnScroll> */}
       </div>
       {/* <div id="backGroundSection" className="h-dvh m-auto flex  flex-col"> */}
-      <div className="-mt-10 mb-96">
-        <RevealOnScroll>
-          <div className="container mx-auto">
-            <div className="w-50">
-              <h4>Education</h4>
-              <hr />
-              <p>
-                Advanced Diploma, Computer Programmer Analyst, Seneca
-                Polytechnic
-                <br />
-                2022-2025
-              </p>
+      <div className="-mt-55 mb-96">
+        {/* <RevealOnScroll>
+          <RevealRightScroll> */}
+        {/* <Skills /> */}
+        <div className="container flex justify-content-end my-3">
+          <div className="w-100 md:p-10 py-4 bg-slate-400 ">
+            {/* <p>Skills</p>
+          <hr /> */}
+            <div className="grid grid-cols-5 size-8/12 gap-4 mx-auto ">
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg" />
+              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
             </div>
           </div>
-          <RevealRightScroll>
-            <div className="container flex justify-content-end my-3">
-              <div className="w-100 p-5 md:p-10">
-                {/* <p>Skills</p>
-          <hr /> */}
-                <div className="grid grid-cols-5 size-8/12 gap-4 mx-auto ">
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
+        </div>
+        {/* </RevealRightScroll> */}
+        <div className="container mx-auto border rounded flex flex-col">
+          <h3 className="pt-3 pl-2">Projects</h3>
+          <div className="grid grid-cols-3 p-2 gap-3">
+            <div className="col-span-1 ">
+              <Link
+                className="no-underline text-black"
+                target="blank"
+                href={"https://met-collection-app-kap.vercel.app/"}
+              >
+                <div className="border rounded  p-2 hover:bg-slate-50">
+                  <Image className="h-48" src="/metAPIpreview.png" />
+                  <p className="text-center pt-2">Metropolitan Museum API</p>
                 </div>
+              </Link>
+            </div>
+            <div className="col-span-1">
+              <Link
+                className="no-underline text-black"
+                target="blank"
+                href={"https://github.com/trochwerger/OOP-Project"}
+              >
+                <div className="border rounded  p-2 hover:bg-slate-50">
+                  <Image className="h-48" src="/assemblyline.jpg" />
+                  <p className="text-center pt-2">Assembly Line Simulation</p>
+                </div>
+              </Link>
+            </div>
+            <div className="col-span-1">
+              <Link
+                className="no-underline text-black"
+                target="blank"
+                href={"https://github.com/trochwerger/OOP-Project"}
+              >
+                <div className="border rounded  p-2 hover:bg-slate-50">
+                  <Image className="h-48" src="/assemblyline.jpg" />
+                  <p className="text-center pt-2">Assembly Line Simulation</p>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="container border rounded">
+          <h4 className="">Education</h4>
+          <div className="md:mb-20 mb-10 my-20">
+            <div className="grid grid-cols-3 mt-10">
+              <div className="col-span-1">
+                <Image className="size-3/6" src="/seneca-logo.svg" />
+              </div>
+              <div className="col-span-1">
+                <p className="text-sm md:text-base">
+                  Advanced Diploma, Computer Programmer Analyst, Seneca
+                  Polytechnic
+                  <br />
+                  2022-2025
+                </p>
               </div>
             </div>
-          </RevealRightScroll>
-        </RevealOnScroll>
+          </div>
+        </div>
+        {/* </RevealOnScroll> */}
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </>
   );
