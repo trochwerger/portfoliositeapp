@@ -40,38 +40,35 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="invisible md:visible">
-          <a
-            href="#background-section"
-            className="mx-auto mt-5 text-blue no-underline"
-            onClick={(e) => {
-              e.preventDefault();
-              const yOffset = -100; // Adjust this value according to your header's height
-              const element = document.querySelector("#background-section");
-              const y =
-                element.getBoundingClientRect().top + window.scrollY + yOffset;
+        <a
+          href="#background-section"
+          className="mx-auto mt-5 text-blue no-underline"
+          onClick={(e) => {
+            e.preventDefault();
+            const yOffset = -100; // Adjust this value according to your header's height
+            const element = document.querySelector("#background-section");
+            const y =
+              element.getBoundingClientRect().top + window.scrollY + yOffset;
 
-              window.scrollTo({ top: y, behavior: "smooth" });
-            }}
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6 animate-bounce"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6 animate-bounce"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
-              />
-            </svg>
-          </a>
-        </div>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+            />
+          </svg>
+        </a>
       </div>
-
       <div
         id="background-section"
         className="md:h-dvh h-1/2 m-auto flex justify-center gap-8 flex-col"
