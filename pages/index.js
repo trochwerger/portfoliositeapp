@@ -1,18 +1,14 @@
 import { Container } from "postcss";
 import { Image, Row, Col } from "react-bootstrap";
-import { useState, useEffect, useRef } from "react";
-import RevealOnScroll from "@/components/RevealScroll";
-import RevealRightScroll from "@/components/RevealRightScroll";
-import Skills from "@/components/Skills";
 import Link from "next/link";
+
 export default function Home() {
   return (
     <>
       <div
         id="introSection"
-        className="h-dvh m-auto flex justify-center flex-col"
+        className="md:h-dvh h-1/2 m-auto flex justify-center flex-col md:pb-0 pb-10"
       >
-        {/* <RevealOnScroll> */}
         <div className="border rounded">
           <div className="p-5">
             <div>
@@ -72,16 +68,15 @@ export default function Home() {
             />
           </svg>
         </a>
-        {/* </RevealOnScroll> */}
       </div>
-      {/* <div id="backGroundSection" className="h-dvh m-auto flex  flex-col"> */}
+
       <div
         id="background-section"
-        className="h-dvh m-auto flex justify-center flex-col"
+        className="md:h-dvh h-1/2 m-auto flex justify-center gap-8 flex-col"
       >
         <div className="container mx-auto border rounded flex flex-col">
           <h3 className="pt-3 pl-2">Projects</h3>
-          <div className="grid grid-cols-3 p-2 gap-3">
+          <div className="grid md:grid-cols-3 grid-cols-1 p-2 gap-3">
             <div className="col-span-1 ">
               <Link
                 className="no-underline text-black"
@@ -89,7 +84,11 @@ export default function Home() {
                 href={"https://met-collection-app-kap.vercel.app/"}
               >
                 <div className="border rounded p-2 hover:bg-slate-50">
-                  <Image className="h-48 mx-auto" src="/metAPIpreview.png" />
+                  <Image
+                    className="h-48 mx-auto"
+                    src="/metAPIpreview.png"
+                    alt="MetApp Preview"
+                  />
                   <p className="text-center pt-2">Metropolitan Museum API</p>
                 </div>
               </Link>
@@ -104,6 +103,7 @@ export default function Home() {
                   <Image
                     className="h-48 size mx-auto"
                     src="/currencyCounter.jpg"
+                    alt="Currency Counter Preview"
                   />
                   <p className="text-center pt-2">Currency Counter</p>
                 </div>
@@ -116,7 +116,11 @@ export default function Home() {
                 href={"https://github.com/trochwerger/assemblyline/"}
               >
                 <div className="border rounded p-2 hover:bg-slate-50">
-                  <Image className="h-48 mx-auto" src="/assemblyline.jpg" />
+                  <Image
+                    className="h-48 mx-auto"
+                    src="/assemblyline.jpg"
+                    alt="Assembly Line Preview"
+                  />
                   <p className="text-center pt-2">Assembly Line Simulation</p>
                 </div>
               </Link>
@@ -137,13 +141,17 @@ export default function Home() {
             </svg>
           </Link>
         </div>
-        <div className="container border rounded mt-5 grid grid-cols-2">
+        <div className="container border rounded mt-5 grid md:grid-cols-2 grid-cols-1">
           <div className="col-span-1">
             <h4 className="pt-3">Education</h4>
             <div className="md:mb-20 mb-10 my-20">
               <div className="grid grid-cols-3 mt-10">
                 <div className="col-span-1">
-                  <Image className="size-3/6" src="/seneca-logo.svg" />
+                  <Image
+                    className="size-3/6"
+                    src="/seneca-logo.svg"
+                    alt="Seneca Logo"
+                  />
                 </div>
                 <div className="col-span-1">
                   <p className="text-sm md:text-base">
@@ -158,55 +166,70 @@ export default function Home() {
           </div>
           <div className="col-span-1 my-auto bg-slate-400 h-full">
             <div className="container flex">
-              <div className="w-100 md:p-10">
-                {/* <p>Skills</p>
-          <hr /> */}
-                <div className="grid grid-cols-5 size-8/12 gap-4 mx-auto ">
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg" />
-                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
+              <div className="w-100 p-10">
+                <div className="grid md:grid-cols-5  grid-cols-3 size-8/12 gap-4 mx-auto ">
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg"
+                    alt="Skills Icon"
+                  />
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
+                    alt="Skills Icon"
+                  />
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="h-dvh mb-96" id="skill-section">
-        {/* <RevealOnScroll>
-          <RevealRightScroll> */}
-        {/* <Skills /> */}
-        <div className="container flex justify-content-end my-3">
-          <div className="w-100 md:p-10 py-4 bg-slate-400 ">
-            {/* <p>Skills</p>
-          <hr /> */}
-            <div className="grid grid-cols-5 size-8/12 gap-4 mx-auto ">
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg" />
-              <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
             </div>
           </div>
         </div>
