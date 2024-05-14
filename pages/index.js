@@ -40,34 +40,36 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <a
-          href="#background-section"
-          className="mx-auto mt-5 text-blue no-underline"
-          onClick={(e) => {
-            e.preventDefault();
-            const yOffset = -100; // Adjust this value according to your header's height
-            const element = document.querySelector("#background-section");
-            const y =
-              element.getBoundingClientRect().top + window.scrollY + yOffset;
+        <div className="invisible md:visible">
+          <a
+            href="#background-section"
+            className="mx-auto mt-5 text-blue no-underline"
+            onClick={(e) => {
+              e.preventDefault();
+              const yOffset = -100; // Adjust this value according to your header's height
+              const element = document.querySelector("#background-section");
+              const y =
+                element.getBoundingClientRect().top + window.scrollY + yOffset;
 
-            window.scrollTo({ top: y, behavior: "smooth" });
-          }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="w-6 h-6"
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
-            />
-          </svg>
-        </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-6 h-6 animate-bounce"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
 
       <div
@@ -141,9 +143,9 @@ export default function Home() {
             </svg>
           </Link>
         </div>
-        <div className="container border rounded mt-5 grid md:grid-cols-2 grid-cols-1">
-          <div className="col-span-1">
-            <h4 className="pt-3">Education</h4>
+        <div className="container border rounded mt-5 grid md:grid-cols-2 grid-cols-1 pb-10 md:pb-0">
+          <div className="col-span-1 pl-2">
+            <h4 className="pt-4">Education</h4>
             <div className="md:mb-20 mb-10 my-20">
               <div className="grid grid-cols-3 mt-10">
                 <div className="col-span-1">
